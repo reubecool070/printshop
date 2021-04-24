@@ -22,12 +22,21 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
+      "&.MuiPaper-elevation4": {
+        boxShadow: "none",
+      },
+      "& .MuiToolbar-regular": {
+        minHeight: "50px",
+      },
     },
     menuButton: {
       marginRight: theme.spacing(2),
     },
     title: {
-      padding: theme.spacing(1, 2),
+      padding: theme.spacing(2, 2, 0, 1),
+    },
+    icon: {
+      padding: theme.spacing(0, 2),
     },
   })
 );
@@ -35,7 +44,7 @@ const useStyles = makeStyles((theme: Theme) =>
 const Header = () => {
   const classes = useStyles();
   return (
-    <AppBar position="static">
+    <AppBar className={classes.root} position="static">
       <Toolbar>
         <Grid container justify="space-between">
           <Grid item>
@@ -43,22 +52,35 @@ const Header = () => {
               edge="start"
               className={classes.menuButton}
               color="inherit"
-              aria-label="menu"
+              aria-label="disabled"
+              // size="small"
             >
-              <Facebook />
-              <Twitter />
-              <Pinterest />
-              <Instagram />
-              <LinkedIn />
+              <Facebook className={classes.icon} color="secondary" />
+              <Twitter className={classes.icon} color="secondary" />
+              <Pinterest className={classes.icon} color="secondary" />
+              <Instagram className={classes.icon} color="secondary" />
+              <LinkedIn className={classes.icon} color="secondary" />
             </IconButton>
           </Grid>
           <Grid item>
             <Grid container direction="row">
-              <Call style={{ marginTop: "5px" }} />
-              <Typography variant="caption" className={classes.title}>
+              <Call
+                fontSize="small"
+                color="secondary"
+                style={{ marginTop: "19px" }}
+              />
+              <Typography
+                color="textSecondary"
+                variant="caption"
+                className={classes.title}
+              >
                 01-4458745
               </Typography>
-              <Typography variant="caption" className={classes.title}>
+              <Typography
+                color="textSecondary"
+                variant="caption"
+                className={classes.title}
+              >
                 Language: English
               </Typography>
             </Grid>
