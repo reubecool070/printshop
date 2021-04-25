@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import {
   List,
   ListItem,
@@ -10,6 +10,7 @@ import {
   Collapse,
 } from "@material-ui/core";
 import { ExpandLess, ExpandMore } from "@material-ui/icons";
+import useOutsideAlerter from "../Utils/DetectOutside";
 // import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -32,26 +33,24 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const NavbarLink = () => {
+function ListItemLink(props: ListItemProps<"a", { button?: false }>) {
+  return (
+    <ListItem
+      style={{ textAlign: "center" }}
+      button={false}
+      component="a"
+      {...props}
+    />
+  );
+}
+
+const NavbarLink = (Props: any) => {
   const classes = useStyles();
   // const history = useHistory();
   const [open, setOpen] = React.useState(false);
+  const wrapperRef = useRef(null);
 
-  // const handleLinkClick = (to: string) => {
-  //   history.push(`/${to}`);
-  // };
-
-  function ListItemLink(props: ListItemProps<"a", { button?: false }>) {
-    return (
-      <ListItem
-        style={{ textAlign: "center" }}
-        button={false}
-        component="a"
-        // onClick={() => handleLinkClick(url)}
-        {...props}
-      />
-    );
-  }
+  useOutsideAlerter(wrapperRef, () => setOpen(false));
 
   const handleClick = () => {
     setOpen(!open);
@@ -59,7 +58,7 @@ const NavbarLink = () => {
 
   return (
     <>
-      <List className={classes.root} dense component="ul">
+      <List ref={wrapperRef} className={classes.root} dense component="ul">
         <ListItemLink onClick={handleClick}>
           <ListItemText primary="All Products"></ListItemText>
           {open ? <ExpandLess /> : <ExpandMore />}

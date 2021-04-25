@@ -45,6 +45,13 @@ export const theme = createMuiTheme({
         fontSize: "15px",
       },
     },
+    MuiListItemText: {
+      secondary: {
+        "&:hover": {
+          color: "#25bce9",
+        },
+      },
+    },
     MuiListItem: {
       root: {
         cursor: "pointer",
@@ -52,13 +59,9 @@ export const theme = createMuiTheme({
           color: "#25bce9",
         },
       },
-      selected: {
-        color: "#25bce9",
-      },
-
       button: {
         "&:hover": {
-          backgroundColor: "transparent",
+          backgroundColor: "#325288",
           color: "#25bce9",
           // transition: "none",
         },
