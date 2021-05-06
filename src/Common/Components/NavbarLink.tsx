@@ -22,6 +22,9 @@ const useStyles = makeStyles((theme: Theme) =>
       "& .MuiListItem-gutters": {
         padding: theme.spacing(1, 1),
       },
+      "& .MuiListItemText-primary": {
+        // color: theme.palette.type === "dark" ? "#fff" : "#000",
+      },
     },
     dropDown: {
       marginTop: theme.spacing(3),

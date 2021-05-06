@@ -1,5 +1,6 @@
 import {
   AppBar,
+  Button,
   createStyles,
   Grid,
   IconButton,
@@ -7,20 +8,28 @@ import {
   Theme,
   Toolbar,
   Typography,
+  useTheme,
 } from "@material-ui/core";
 import {
   Call,
   Facebook,
   Instagram,
   LinkedIn,
+  NightsStayOutlined,
   Pinterest,
   Twitter,
+  WbSunnyOutlined,
 } from "@material-ui/icons";
 import React from "react";
+import { withTheme } from "../Css/GlobalStyles.css";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
+      backgroundColor:
+        theme.palette.type === "dark"
+          ? theme.palette.primary.dark
+          : theme.palette.primary.light,
       flexGrow: 1,
       "&.MuiPaper-elevation4": {
         boxShadow: "none",
@@ -34,15 +43,24 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     title: {
       padding: theme.spacing(2, 2, 0, 1),
+      color: "#fff",
     },
     icon: {
-      padding: theme.spacing(0, 2),
+      // padding: theme.spacing(0, 2),
+      // color: "#fff",
+      width: "45px",
     },
   })
 );
 
-const Header = () => {
+const Header = (props: any) => {
   const classes = useStyles();
+  const theme = useTheme();
+  const { darkMode, setDarkMode } = props;
+
+  console.log("props", props);
+  console.log("theme", theme);
+
   return (
     <AppBar className={classes.root} position="static">
       <Toolbar>
@@ -51,7 +69,7 @@ const Header = () => {
             <IconButton
               edge="start"
               className={classes.menuButton}
-              color="inherit"
+              color="secondary"
               aria-label="disabled"
               // size="small"
             >
@@ -86,7 +104,13 @@ const Header = () => {
             </Grid>
           </Grid>
         </Grid>
-        {/* <Button color="inherit">Login</Button> */}
+        <Button onClick={() => setDarkMode(!darkMode)} color="inherit">
+          {theme.palette.type === "dark" ? (
+            <WbSunnyOutlined style={{ color: "#fff" }} />
+          ) : (
+            <NightsStayOutlined />
+          )}
+        </Button>
       </Toolbar>
     </AppBar>
   );
