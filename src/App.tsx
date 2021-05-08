@@ -10,6 +10,7 @@ import React from "react";
 import Header from "./Common/Components/Header";
 import Navbar from "./Common/Components/Navbar";
 import { withTheme } from "./Common/Css/GlobalStyles.css";
+import Homepage from "./Page/HomePage/Homepage";
 import TestuseEffect from "./Test/TestuseEffect";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -29,18 +30,10 @@ function App(props: any) {
       <Paper className={classes.root} elevation={0}>
         <Header darkMode={darkMode} setDarkMode={setDarkMode} />
         <Navbar />
-        Going to build an ecommerce Site
-        <TestuseEffect />
-        {/* <FormControlLabel
-          control={
-            <Switch
-              checked={darkMode}
-              onChange={() => setDarkMode(!darkMode)}
-            />
-          }
-          label="Dark Mode"
-        /> */}
       </Paper>
+      Going to build an ecommerce Site
+      <TestuseEffect />
+      <Homepage />
     </React.Fragment>
   );
 }

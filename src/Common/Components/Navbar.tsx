@@ -102,7 +102,6 @@ const Navbar = () => {
           </Collapse>
         </Grid>
       </Grid>
-      i m a Navbar
     </>
   );
 };
