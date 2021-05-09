@@ -1,10 +1,38 @@
 import classNames from "classnames";
 import React from "react";
 import { ButtonStyle } from "../Css/ButtonStyle";
-import PropTypes from "prop-types";
 import { Button } from "@material-ui/core";
 
-const CustomButton = React.forwardRef((props: any, ref: any) => {
+type PropsI = {
+  color:
+    | "transparent"
+    | "primary"
+    | "info"
+    | "success"
+    | "warning"
+    | "danger"
+    | "rose"
+    | "white"
+    | "facebook"
+    | "twitter"
+    | "google"
+    | "github"
+    | "transparent";
+  round?: boolean;
+  size: "sm" | "lg" | "";
+  fullWidth?: boolean;
+  disabled?: boolean;
+  block?: boolean;
+  link?: boolean;
+  justIcon?: boolean;
+  children: React.ReactNode;
+  className: string;
+  simple?: boolean;
+  href?: string;
+  target?: string;
+};
+
+const CustomButton = React.forwardRef((props: PropsI, ref: any) => {
   const {
     color,
     round,
@@ -43,31 +71,31 @@ const CustomButton = React.forwardRef((props: any, ref: any) => {
   );
 });
 
-CustomButton.propTypes = {
-  color: PropTypes.oneOf([
-    "primary",
-    "info",
-    "success",
-    "warning",
-    "danger",
-    "rose",
-    "white",
-    "facebook",
-    "twitter",
-    "google",
-    "github",
-    "transparent",
-  ]),
-  size: PropTypes.oneOf(["sm", "lg"]),
-  simple: PropTypes.bool,
-  round: PropTypes.bool,
-  fullWidth: PropTypes.bool,
-  disabled: PropTypes.bool,
-  block: PropTypes.bool,
-  link: PropTypes.bool,
-  justIcon: PropTypes.bool,
-  children: PropTypes.node,
-  className: PropTypes.string,
-};
-
 export default CustomButton;
+
+// RegularButton.propTypes = {
+//   color: PropTypes.oneOf([
+//     "primary",
+//     "info",
+//     "success",
+//     "warning",
+//     "danger",
+//     "rose",
+//     "white",
+//     "facebook",
+//     "twitter",
+//     "google",
+//     "github",
+//     "transparent",
+//   ]),
+//   size: PropTypes.oneOf(["sm", "lg"]),
+//   simple: PropTypes.bool,
+//   round: PropTypes.bool,
+//   fullWidth: PropTypes.bool,
+//   disabled: PropTypes.bool,
+//   block: PropTypes.bool,
+//   link: PropTypes.bool,
+//   justIcon: PropTypes.bool,
+//   children: PropTypes.node,
+//   className: PropTypes.string,
+// };

@@ -16,6 +16,7 @@ const HeaderLinks = () => {
           classes={{ tooltip: classes.tooltip }}
         >
           <CustomButton
+            size=""
             href="https://twitter.com/CreativeTim?ref=creativetim"
             target="_blank"
             color="transparent"
@@ -33,6 +34,7 @@ const HeaderLinks = () => {
           classes={{ tooltip: classes.tooltip }}
         >
           <CustomButton
+            size=""
             color="transparent"
             href="https://www.facebook.com/CreativeTim?ref=creativetim"
             target="_blank"
@@ -50,6 +52,7 @@ const HeaderLinks = () => {
           classes={{ tooltip: classes.tooltip }}
         >
           <CustomButton
+            size=""
             color="transparent"
             href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
             target="_blank"
@@ -67,6 +70,7 @@ const HeaderLinks = () => {
           classes={{ tooltip: classes.tooltip }}
         >
           <CustomButton
+            size=""
             color="transparent"
             href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
             target="_blank"
@@ -84,6 +88,7 @@ const HeaderLinks = () => {
           classes={{ tooltip: classes.tooltip }}
         >
           <CustomButton
+            size=""
             color="transparent"
             href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
             target="_blank"

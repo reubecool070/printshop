@@ -10,10 +10,41 @@ import {
 import classNames from "classnames";
 import React from "react";
 import headerStyle from "../Css/HeaderStyle";
-import PropTypes from "prop-types";
 import Menu from "@material-ui/icons/Menu";
 
-const Header = (props: any) => {
+interface PropsI {
+  color:
+    | "primary"
+    | "info"
+    | "success"
+    | "warning"
+    | "danger"
+    | "transparent"
+    | "white"
+    | "rose"
+    | "danger";
+  rightLinks: React.ReactNode;
+  leftLinks: React.ReactNode;
+  brand: string;
+  fixed: boolean;
+  className: string;
+  absolute: boolean;
+  changeColorOnScroll: {
+    height: number;
+    color:
+      | "primary"
+      | "info"
+      | "success"
+      | "warning"
+      | "danger"
+      | "transparent"
+      | "white"
+      | "rose"
+      | "danger";
+  };
+}
+
+const Header = (props: PropsI) => {
   const classes: any = headerStyle();
 
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -119,47 +150,48 @@ const Header = (props: any) => {
 
 export default Header;
 
-Header.defaultProp = {
-  color: "",
-  className: "",
-};
+// Header.defaultProp = {
+//   color: "",
+//   className: "",
+// };
 
-Header.propTypes = {
-  color: PropTypes.oneOf([
-    "primary",
-    "info",
-    "success",
-    "warning",
-    "danger",
-    "transparent",
-    "white",
-    "rose",
-    "dark",
-  ]),
-  rightLinks: PropTypes.node,
-  leftLinks: PropTypes.node,
-  brand: PropTypes.string,
-  fixed: PropTypes.bool,
-  className: PropTypes.string,
-  absolute: PropTypes.bool,
-  // this will cause the sidebar to change the color from
-  // props.color (see above) to changeColorOnScroll.color
-  // when the window.pageYOffset is heigher or equal to
-  // changeColorOnScroll.height and then when it is smaller than
-  // changeColorOnScroll.height change it back to
-  // props.color (see above)
-  changeColorOnScroll: PropTypes.shape({
-    height: PropTypes.number.isRequired,
-    color: PropTypes.oneOf([
-      "primary",
-      "info",
-      "success",
-      "warning",
-      "danger",
-      "transparent",
-      "white",
-      "rose",
-      "dark",
-    ]).isRequired,
-  }),
-};
+// Header.propTypes = {
+//   color: PropTypes.oneOf([
+//     "primary",
+//     "info",
+//     "success",
+//     "warning",
+//     "danger",
+//     "transparent",
+//     "white",
+//     "rose",
+//     "dark",
+//   ]),
+//   rightLinks: PropTypes.node,
+//   leftLinks: PropTypes.node,
+//   brand: PropTypes.string,
+//   fixed: PropTypes.bool,
+//   className: PropTypes.string,
+//   absolute: PropTypes.bool,
+//   // this will cause the sidebar to change the color from
+//   // props.color (see above) to changeColorOnScroll.color
+//   // when the window.pageYOffset is heigher or equal to
+//   // changeColorOnScroll.height and then when it is smaller than
+//   // changeColorOnScroll.height change it back to
+//   // props.color (see above)
+//   changeColorOnScroll: PropTypes.shape({
+//     height: PropTypes.number.isRequired,
+//     // height: PropTypes.number,
+//     color: PropTypes.oneOf([
+//       "primary",
+//       "info",
+//       "success",
+//       "warning",
+//       "danger",
+//       "transparent",
+//       "white",
+//       "rose",
+//       "dark",
+//     ]).isRequired,
+//   }),
+// };

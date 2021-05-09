@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
 import { Grid, makeStyles } from "@material-ui/core";
-import PropTypes from "prop-types";
 
 const styles: object = {
   grid: {
@@ -13,6 +12,11 @@ const styles: object = {
     flexBasis: "auto",
   },
 };
+
+interface PropsI {
+  children: React.ReactNode;
+  className: string;
+}
 
 const useStyles = makeStyles(styles);
 
@@ -27,12 +31,3 @@ const GridItem = (props: any) => {
 };
 
 export default GridItem;
-
-GridItem.defaultProps = {
-  className: "",
-};
-
-GridItem.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
-};

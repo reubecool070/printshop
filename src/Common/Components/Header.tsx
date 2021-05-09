@@ -21,7 +21,6 @@ import {
   WbSunnyOutlined,
 } from "@material-ui/icons";
 import React from "react";
-import { withTheme } from "../Css/GlobalStyles.css";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -58,8 +57,8 @@ const Header = (props: any) => {
   const theme = useTheme();
   const { darkMode, setDarkMode } = props;
 
-  console.log("props", props);
-  console.log("theme", theme);
+  // console.log("props", props);
+  // console.log("theme", theme);
 
   return (
     <AppBar className={classes.root} position="static">

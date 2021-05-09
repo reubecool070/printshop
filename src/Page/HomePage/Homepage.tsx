@@ -1,4 +1,3 @@
-import classes from "*.module.css";
 import { createStyles, makeStyles, Theme } from "@material-ui/core";
 import React from "react";
 import Header from "../../Common/Reusable/Header";

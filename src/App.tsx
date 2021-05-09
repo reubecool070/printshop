@@ -1,10 +1,4 @@
-import {
-  FormControlLabel,
-  makeStyles,
-  Paper,
-  Switch,
-  Theme,
-} from "@material-ui/core";
+import { makeStyles, Paper, Theme } from "@material-ui/core";
 import { createStyles } from "@material-ui/styles";
 import React from "react";
 import Header from "./Common/Components/Header";
