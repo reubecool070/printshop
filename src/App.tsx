@@ -5,6 +5,7 @@ import Header from "./Common/Components/Header";
 import Navbar from "./Common/Components/Navbar";
 import { withTheme } from "./Common/Css/GlobalStyles.css";
 import Homepage from "./Page/HomePage/Homepage";
+import TestSample from "./Test/TestSample";
 import TestuseEffect from "./Test/TestuseEffect";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -20,7 +21,7 @@ function App(props: any) {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
+    <>
       <Paper className={classes.root} elevation={0}>
         <Header darkMode={darkMode} setDarkMode={setDarkMode} />
         <Navbar />
@@ -28,7 +29,8 @@ function App(props: any) {
       Going to build an ecommerce Site
       <TestuseEffect />
       <Homepage />
-    </React.Fragment>
+      <TestSample />
+    </>
   );
 }
 

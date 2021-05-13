@@ -7,17 +7,18 @@ import { useEffectOnUpdate } from "../Common/Utils/useEffectOnUpdate";
 const TestuseEffect = () => {
   const [count, setCount] = useState(0);
 
+  // React.useEffect(() => {
+  //   dispatch(GetPosts(item));
+  // });
+
   useEffectOnUpdate(() => {
     // console.log("working fine");
-  });
-
-  useEffect(() => {
-    // console.log("working not fine");
   });
 
   return (
     <div>
       <Button onClick={() => setCount(count + 1)}>Adding value {count}</Button>
+
       <GridContainer>
         <GridItem>check</GridItem>
       </GridContainer>

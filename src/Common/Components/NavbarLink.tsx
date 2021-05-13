@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme: Theme) =>
 function ListItemLink(props: ListItemProps<"a", { button?: false }>) {
   return (
     <ListItem
-      style={{ textAlign: "center" }}
+      style={{ textAlign: "center", cursor: "pointer" }}
       button={false}
       component="a"
       {...props}
