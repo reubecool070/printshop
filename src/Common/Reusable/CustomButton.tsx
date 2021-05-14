@@ -26,10 +26,13 @@ type PropsI = {
   link?: boolean;
   justIcon?: boolean;
   children: React.ReactNode;
-  className: string;
+  className?: string;
   simple?: boolean;
   href?: string;
   target?: string;
+  onClick?: () => void;
+  style?: any;
+  fontSize?: string;
 };
 
 const CustomButton = React.forwardRef((props: PropsI, ref: any) => {
@@ -45,6 +48,8 @@ const CustomButton = React.forwardRef((props: PropsI, ref: any) => {
     link,
     justIcon,
     className,
+    onClick,
+    fontSize,
     ...rest
   } = props;
 
@@ -61,11 +66,18 @@ const CustomButton = React.forwardRef((props: PropsI, ref: any) => {
     [classes.block]: block,
     [classes.link]: link,
     [classes.justIcon]: justIcon,
-    [className]: className,
+
+    // [className]: className,
   });
 
   return (
-    <Button {...rest} ref={ref} className={btnClasses}>
+    <Button
+      {...rest}
+      style={{ fontSize: fontSize }}
+      onClick={onClick}
+      ref={ref}
+      className={btnClasses}
+    >
       {children}
     </Button>
   );

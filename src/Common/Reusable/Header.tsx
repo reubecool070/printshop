@@ -29,6 +29,7 @@ interface PropsI {
   fixed: boolean;
   className: string;
   absolute: boolean;
+  height: number;
   changeColorOnScroll: {
     height: number;
     color:
@@ -91,6 +92,7 @@ const Header = (props: PropsI) => {
     brand,
     fixed,
     absolute,
+    height,
     className,
   } = props;
 
@@ -103,7 +105,7 @@ const Header = (props: PropsI) => {
   const brandComponent = <Button className={classes.title}>{brand}</Button>;
 
   return (
-    <AppBar className={appBarClasses}>
+    <AppBar style={{ height: height }} className={appBarClasses}>
       <Toolbar className={classes.container}>
         {/* {leftLinks !== undefined ? brandComponent : null} */}
         <div className={classes.flex}>

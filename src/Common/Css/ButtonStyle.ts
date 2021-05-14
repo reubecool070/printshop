@@ -23,7 +23,7 @@ export const ButtonStyle = makeStyles((theme: Theme) =>
       position: "relative",
       padding: "8px",
       margin: ".3125rem 1px",
-      fontSize: "12px",
+      // fontSize: "14px",
       fontWeight: 400,
       textTransform: "uppercase",
       letterSpacing: "0",

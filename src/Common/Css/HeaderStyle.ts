@@ -33,6 +33,7 @@ const headerStyle = makeStyles((theme: Theme) =>
       position: "relative",
       zIndex: "unset",
     },
+
     absolute: {
       position: "absolute",
       zIndex: 1100,

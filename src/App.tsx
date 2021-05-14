@@ -23,12 +23,12 @@ function App(props: any) {
   return (
     <>
       <Paper className={classes.root} elevation={0}>
-        <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+        <Homepage darkMode={darkMode} setDarkMode={setDarkMode} />
+        {/* <Header darkMode={darkMode} setDarkMode={setDarkMode} /> */}
         <Navbar />
       </Paper>
       Going to build an ecommerce Site
       <TestuseEffect />
-      <Homepage />
       <TestSample />
     </>
   );

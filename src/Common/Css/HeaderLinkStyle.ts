@@ -87,7 +87,7 @@ const headerLinksStyle = makeStyles((theme: Theme) =>
       display: "inline-flex",
     },
     navLinkActive: {
-      color: "inherit",
+      // color: "inherit",
       backgroundColor: "rgba(255, 255, 255, 0.1)",
     },
     icons: {
