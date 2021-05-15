@@ -1,12 +1,12 @@
 import { makeStyles, Paper, Theme } from "@material-ui/core";
 import { createStyles } from "@material-ui/styles";
 import React from "react";
-import Header from "./Common/Components/Header";
-import Navbar from "./Common/Components/Navbar";
 import { withTheme } from "./Common/Css/GlobalStyles.css";
 import Homepage from "./Page/HomePage/Homepage";
-import TestSample from "./Test/TestSample";
-import TestuseEffect from "./Test/TestuseEffect";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import DashboardPage from "./Page/Dashboard/DashboardPage";
+import TopHeader from "./Common/Components/TopHeader";
+import Navbar from "./Common/Components/Navbar";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -23,13 +23,20 @@ function App(props: any) {
   return (
     <>
       <Paper className={classes.root} elevation={0}>
-        <Homepage darkMode={darkMode} setDarkMode={setDarkMode} />
+        <Router>
+          <TopHeader darkMode={darkMode} setDarkMode={setDarkMode} />
+          <Switch>
+            <Route exact path="/" component={Homepage} />
+            <Route exact path="/admin" component={DashboardPage} />
+          </Switch>
+          {/* <Navbar /> */}
+        </Router>
+        {/* <Homepage darkMode={darkMode} setDarkMode={setDarkMode} /> */}
         {/* <Header darkMode={darkMode} setDarkMode={setDarkMode} /> */}
-        <Navbar />
       </Paper>
-      Going to build an ecommerce Site
-      <TestuseEffect />
-      <TestSample />
+      {/* Going to build an ecommerce Site */}
+      {/* <TestuseEffect /> */}
+      {/* <TestSample /> */}
     </>
   );
 }

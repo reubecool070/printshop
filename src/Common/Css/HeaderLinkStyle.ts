@@ -19,7 +19,7 @@ const headerLinksStyle = makeStyles((theme: Theme) =>
       position: "relative",
       display: "block",
       width: "auto",
-      margin: "0",
+      // margin: "0",
       padding: "0",
       [theme.breakpoints.down("sm")]: {
         width: "100%",
@@ -136,6 +136,14 @@ const headerLinksStyle = makeStyles((theme: Theme) =>
     },
     marginRight5: {
       marginRight: "5px",
+    },
+    dropDown: {
+      marginTop: theme.spacing(0),
+      position: "absolute",
+      borderTop: "2px solid #25bce9",
+      background: "#fff",
+      marginLeft: "-170px",
+      boxShadow: "-4px 8px 16px -6px rgba(0,0,0,0.64)",
     },
   })
 );

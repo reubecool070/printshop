@@ -30,7 +30,8 @@ type PropsI = {
   simple?: boolean;
   href?: string;
   target?: string;
-  onClick?: () => void;
+  // onClick?: () => void;
+  onClick?: any;
   style?: any;
   fontSize?: string;
 };

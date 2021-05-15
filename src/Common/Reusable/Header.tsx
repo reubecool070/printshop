@@ -30,6 +30,7 @@ interface PropsI {
   className: string;
   absolute: boolean;
   height: number;
+  bgColor?: boolean;
   changeColorOnScroll: {
     height: number;
     color:
@@ -94,6 +95,7 @@ const Header = (props: PropsI) => {
     absolute,
     height,
     className,
+    bgColor,
   } = props;
 
   const appBarClasses = classNames({
@@ -101,6 +103,7 @@ const Header = (props: PropsI) => {
     [classes[color]]: color,
     [classes.absolute]: absolute,
     [classes.fixed]: fixed,
+    [classes.bgColor]: bgColor,
   });
   const brandComponent = <Button className={classes.title}>{brand}</Button>;
 
