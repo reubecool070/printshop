@@ -43,8 +43,6 @@ const TopHeader = (props: any) => {
   const classX = useStyles();
   const theme = useTheme();
 
-  console.log("object", topHeaderData);
-
   const { darkMode, setDarkMode, ...rest } = props;
 
   return (

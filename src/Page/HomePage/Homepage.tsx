@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { createStyles, makeStyles, Theme } from "@material-ui/core";
-import { Link } from "react-router-dom";
 import Navbar from "./Components/Navbar";
+import UseTabHook from "../../Common/Utils/hooks/UseTabHook";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -24,6 +24,8 @@ const Homepage = (props: any) => {
     <>
       <Navbar />
       {/* <Link to="/admin">Go to Dashboard</Link> */}
+      {/* <CustomHooks /> */}
+      {/* <UseTabHook /> */}
     </>
   );
 };

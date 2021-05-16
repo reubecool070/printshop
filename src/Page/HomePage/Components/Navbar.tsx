@@ -17,9 +17,24 @@ import Header from "../../../Common/Reusable/Header";
 import useOutsideAlerter from "../../../Common/Utils/DetectOutside";
 import logo from "../../../images/logo.png";
 
-const navbarData = {
-  item: ["Business Cards", "Marketing", "Post Cards", "About Us"],
-};
+const mainNav = [
+  {
+    nav: "Products",
+    dropdown: [
+      "Business Cards",
+      "Premium Cards",
+      { divider: true },
+      "Canvas",
+      { divider: true },
+      "Brochures",
+      "Bills",
+    ],
+  },
+  { nav: "Business Cards", dropdown: [] },
+  { nav: "Marketing", dropdown: [] },
+  { nav: "Post Cards", dropdown: [] },
+  { nav: "About Us", dropdown: [] },
+];
 
 const Navbar = (props: any) => {
   const classes: any = headerLinksStyle();
@@ -45,7 +60,7 @@ const Navbar = (props: any) => {
         height={60}
         rightLinks={
           <List className={classes.list}>
-            <ListItem className={classes.listItem}>
+            {/* <ListItem className={classes.listItem}>
               <CustomDropDown
                 hoverColor="primary"
                 caret
@@ -65,17 +80,48 @@ const Navbar = (props: any) => {
                   "Bills",
                 ]}
               />
-            </ListItem>
-            {navbarData.item.map((nav) => {
+            </ListItem> */}
+            {mainNav.map((elem: any, index: number) => {
               return (
-                <ListItem key={nav} className={classes.listItem}>
-                  <CustomButton
+                <ListItem key={index} className={classes.listItem}>
+                  {elem.dropdown.length ? (
+                    <CustomDropDown
+                      hoverColor="primary"
+                      caret
+                      buttonText={elem.nav}
+                      dropdownHeader="All Products"
+                      buttonProps={{
+                        className: classes.navLink,
+                        color: "transparent",
+                      }}
+                      // eslint-disable-next-line array-callback-return
+                      dropdownList={elem.dropdown.map((item: any) => item)}
+                      // dropdownList={[
+                      //   "Business Cards",
+                      //   "Premium Cards",
+                      //   "Canvas",
+                      //   { divider: true },
+                      //   "Brochures",
+                      //   { divider: true },
+                      //   "Bills",
+                      // ]}
+                    />
+                  ) : (
+                    <CustomButton
+                      size=""
+                      className={classes.navLink}
+                      color="transparent"
+                    >
+                      {elem.nav}
+                    </CustomButton>
+                  )}
+                  {/* <CustomButton
                     size=""
                     className={classes.navLink}
                     color="transparent"
                   >
-                    {nav}
-                  </CustomButton>
+                    {elem.nav}
+                  </CustomButton> */}
                 </ListItem>
               );
             })}
