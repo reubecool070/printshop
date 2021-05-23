@@ -60,27 +60,6 @@ const Navbar = (props: any) => {
         height={60}
         rightLinks={
           <List className={classes.list}>
-            {/* <ListItem className={classes.listItem}>
-              <CustomDropDown
-                hoverColor="primary"
-                caret
-                buttonText="Products"
-                dropdownHeader="All Products"
-                buttonProps={{
-                  className: classes.navLink,
-                  color: "transparent",
-                }}
-                dropdownList={[
-                  "Business Cards",
-                  "Premium Cards",
-                  "Canvas",
-                  { divider: true },
-                  "Brochures",
-                  { divider: true },
-                  "Bills",
-                ]}
-              />
-            </ListItem> */}
             {mainNav.map((elem: any, index: number) => {
               return (
                 <ListItem key={index} className={classes.listItem}>
@@ -94,17 +73,7 @@ const Navbar = (props: any) => {
                         className: classes.navLink,
                         color: "transparent",
                       }}
-                      // eslint-disable-next-line array-callback-return
                       dropdownList={elem.dropdown.map((item: any) => item)}
-                      // dropdownList={[
-                      //   "Business Cards",
-                      //   "Premium Cards",
-                      //   "Canvas",
-                      //   { divider: true },
-                      //   "Brochures",
-                      //   { divider: true },
-                      //   "Bills",
-                      // ]}
                     />
                   ) : (
                     <CustomButton
@@ -115,18 +84,11 @@ const Navbar = (props: any) => {
                       {elem.nav}
                     </CustomButton>
                   )}
-                  {/* <CustomButton
-                    size=""
-                    className={classes.navLink}
-                    color="transparent"
-                  >
-                    {elem.nav}
-                  </CustomButton> */}
                 </ListItem>
               );
             })}
             <ListItem
-              style={{ marginLeft: "200px" }}
+              style={{ marginLeft: "50px" }}
               className={classes.listItem}
             >
               <Grid container justify="flex-end">

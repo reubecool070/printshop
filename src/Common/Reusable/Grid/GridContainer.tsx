@@ -18,11 +18,11 @@ const defaultProps = {
 
 const useStyles = makeStyles(styles);
 
-const GridContainer = (props: PropsI) => {
+const GridContainer = (props: any) => {
   const classes = useStyles();
   const { children, className, ...rest } = props;
   return (
-    <Grid container {...rest} className={classes.grid}>
+    <Grid container className={classes.grid} {...rest}>
       {children}
     </Grid>
   );

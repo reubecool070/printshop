@@ -121,6 +121,7 @@ const headerStyle = makeStyles((theme: Theme) =>
     },
     dark: {
       color: "#FFFFFF",
+      marginBottom: "20px",
       backgroundColor: "#212121 !important",
       boxShadow:
         "0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(33, 33, 33, 0.46)",
