@@ -1,8 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { createStyles, makeStyles, Theme } from "@material-ui/core";
 import Navbar from "./Components/Navbar";
-import UseTabHook from "../../Common/Utils/hooks/UseTabHook";
-import CustomTitleHookUpdate from "../../Common/Utils/hooks/CustomTitleHookUpdate";
 import Carousel from "./Components/Carousel";
 
 const useStyles = makeStyles((theme: Theme) =>

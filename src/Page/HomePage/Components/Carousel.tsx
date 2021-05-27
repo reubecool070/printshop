@@ -179,5 +179,3 @@ const Carousel = () => {
 };
 
 export default Carousel;
-
-const carouselData = [{ id: 1, img: "", data: "" }];
