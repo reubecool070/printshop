@@ -143,11 +143,11 @@ const Carousel = () => {
                 alt=""
                 width="1200px"
               />
-              <Grid container className={classes.absolute}>
+              {/* <Grid container className={classes.absolute}>
                 <Typography align="center" variant="h5">
                   Hello There
                 </Typography>
-              </Grid>
+              </Grid> */}
             </Box>
             <Box>
               <img

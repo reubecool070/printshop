@@ -2,6 +2,7 @@ import React from "react";
 import { createStyles, makeStyles, Theme } from "@material-ui/core";
 import Navbar from "./Components/Navbar";
 import Carousel from "./Components/Carousel";
+import MainContent from "./Components/MainContent";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -23,7 +24,8 @@ const Homepage = (props: any) => {
   return (
     <>
       <Navbar />
-      <Carousel />
+      {/* <Carousel /> */}
+      <MainContent />
     </>
   );
 };
