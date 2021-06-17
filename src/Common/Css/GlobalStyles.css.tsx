@@ -42,6 +42,9 @@ const Theme = (props: any) => {
             colorTextSecondary: {
               color: "#fff",
             },
+            colorPrimary: {
+              color: "#25bce9",
+            },
           },
           MuiIcon: {
             colorSecondary: {

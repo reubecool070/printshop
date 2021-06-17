@@ -7,22 +7,22 @@ const styles = {
   },
 };
 
-type PropsI = {
-  children: React.ReactNode;
-  className: string;
-} & typeof defaultProps;
+// type PropsI = {
+//   children: React.ReactNode;
+//   className: string;
+// } & typeof defaultProps;
 
-const defaultProps = {
-  className: "",
-};
+// const defaultProps = {
+//   className: "",
+// };
 
 const useStyles = makeStyles(styles);
 
 const GridContainer = (props: any) => {
   const classes = useStyles();
-  const { children, className, ...rest } = props;
+  const { children, ...rest } = props;
   return (
-    <Grid container className={classes.grid} {...rest}>
+    <Grid container {...rest}>
       {children}
     </Grid>
   );
@@ -30,4 +30,4 @@ const GridContainer = (props: any) => {
 
 export default GridContainer;
 
-GridContainer.defaultProps = defaultProps;
+// GridContainer.defaultProps = defaultProps;

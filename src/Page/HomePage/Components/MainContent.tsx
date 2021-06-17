@@ -136,7 +136,7 @@ const MainContent = () => {
 
   return (
     <>
-      <Card className={classes.root}>
+      <Card elevation={0} className={classes.root}>
         <GridContainer>
           <GridItem>
             <Slider {...settings}>
@@ -172,7 +172,7 @@ const MainContent = () => {
                     <CardMedia
                       className={classes.cover}
                       image="http://www.pngmart.com/files/7/Red-Smoke-Transparent-Images-PNG.png"
-                      title="nothing"
+                      title=""
                     />
                   </GridItem>
                 </GridContainer>

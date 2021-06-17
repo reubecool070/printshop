@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import DashboardPage from "./Page/Dashboard/DashboardPage";
 import TopHeader from "./Common/Components/TopHeader";
 import Navbar from "./Common/Components/Navbar";
+import Footer from "./Common/Components/Footer";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -29,6 +30,7 @@ function App(props: any) {
             <Route exact path="/" component={Homepage} />
             <Route exact path="/admin" component={DashboardPage} />
           </Switch>
+          <Footer />
           {/* <Navbar /> */}
         </Router>
         {/* <Homepage darkMode={darkMode} setDarkMode={setDarkMode} /> */}
